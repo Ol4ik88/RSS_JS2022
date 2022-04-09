@@ -48,6 +48,7 @@ input::-ms-clear {
 
 button {
   cursor: url("../../assets/icons/icon.svg"), pointer;
+  background: transparent;
 }
 
 button::-moz-focus-inner {
@@ -197,6 +198,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -208,9 +212,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -223,7 +227,6 @@ body {
 .heder__logo .title {
   font-family: Georgia;
   font-style: normal;
-  font-weight: 400;
   font-size: 32px;
   line-height: 110%;
   letter-spacing: 0.06em;
@@ -313,6 +316,7 @@ body {
 
 .pets__text-heading {
   max-width: 400px;
+  max-height: 90px;
   text-align: center;
 }
 
@@ -327,21 +331,28 @@ body {
 }
 
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px 0px;
   background: #FAFAFA;
   border-radius: 9px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.img_pets {
-  display: block;
-  width: 100%;
-  margin-bottom: 30px;
+  width: 270px;
+  height: 435px;
 }
 
 .card_subheading {
   line-height: 22px;
-  margin-bottom: 30px;
 }
 
 .button {
@@ -365,11 +376,10 @@ body {
   display: inline-block;
   margin-bottom: 30px;
   padding: 13px 43px;
+  width: 188px;
+  height: 52px;
 }
 
-/* .card__button:hover{
-	border: 2px solid $color-primary-light;
-} */
 .card:hover {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -377,9 +387,9 @@ body {
   cursor: url("../../assets/icons/icon.svg"), pointer;
 }
 
-.card:hover > a {
+.card:hover > button {
   background: #FDDCC4;
-  border: 2px solid #FDDCC4;
+  border: 2px solid transparent;
 }
 
 .pagination {
@@ -387,21 +397,22 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 0 20px;
-  text-align: center;
 }
 
 .control {
+  width: 52px;
+  height: 52px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   text-align: center;
 }
 
 .control-start, .control-end {
-  padding: 13px 10px;
+  padding: 11px 12px;
 }
 
 .control-prev, .control-next {
-  padding: 13px 17px;
+  padding: 12px 17px;
 }
 
 .control:hover {
@@ -414,6 +425,8 @@ body {
   padding: 14px 21px 15px 22px;
   background: #F1CDB3;
   border-radius: 100px;
+  width: 52px;
+  height: 52px;
   color: #292929;
 }
 
@@ -445,7 +458,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 40px 0;
+  gap: 39px 0;
   padding-top: 16px;
 }
 
@@ -455,7 +468,7 @@ body {
 
 .locations {
   min-width: 302px;
-  gap: 33px 0;
+  gap: 32px 0;
 }
 
 .footer__title {
