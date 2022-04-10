@@ -297,7 +297,7 @@ body {
 
 .pets {
   background: #F6F6F6;
-  margin-top: 120.2px;
+  margin-top: 120px;
 }
 
 .pets__container {
@@ -324,7 +324,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 15px 0;
+  padding: 16px 0 14px 0;
   gap: 30px 40px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -363,7 +363,15 @@ body {
   letter-spacing: 0.06em;
   color: #292929;
   text-align: center;
-  padding: 15px 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 100px;
 }
 
@@ -375,7 +383,6 @@ body {
   border: 2px solid #F1CDB3;
   display: inline-block;
   margin-bottom: 30px;
-  padding: 13px 43px;
   width: 188px;
   height: 52px;
 }
@@ -402,17 +409,18 @@ body {
 .control {
   width: 52px;
   height: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   text-align: center;
-}
-
-.control-start, .control-end {
-  padding: 11px 12px;
-}
-
-.control-prev, .control-next {
-  padding: 12px 17px;
 }
 
 .control:hover {
@@ -422,7 +430,15 @@ body {
 }
 
 .current-page {
-  padding: 14px 21px 15px 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #F1CDB3;
   border-radius: 100px;
   width: 52px;

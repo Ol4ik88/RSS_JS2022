@@ -353,7 +353,15 @@ body {
   letter-spacing: 0.06em;
   color: #292929;
   text-align: center;
-  padding: 15px 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 100px;
 }
 
@@ -500,14 +508,19 @@ body {
   border: 2px solid #F1CDB3;
   display: inline-block;
   margin-bottom: 30px;
-  padding: 13px 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 188px;
   height: 52px;
 }
 
-/* .card__button:hover{
-	border: 2px solid transparent;
-} */
 .button_pets {
   background: #F1CDB3;
   width: 261px;
