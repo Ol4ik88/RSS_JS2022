@@ -32,7 +32,6 @@ html, body {
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 15px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -110,33 +109,33 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Georgia;
   font-style: italic;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 130%;
   color: rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-  font-size: 44px;
+  font-size: 4.4rem;
   line-height: 130%;
   color: #545454;
 }
 
 h3 {
-  font-size: 35px;
+  font-size: 3.5rem;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -146,16 +145,20 @@ p {
   font-family: Arial;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 160%;
   color: #4C4C4C;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
   font-family: Arial;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 160%;
   background: url(../../assets/icons/noise_transparent@2x.png), -webkit-gradient(linear, left top, right top, from(#5b483a), to(#262425)), #211F20;
   background: url(../../assets/icons/noise_transparent@2x.png), -webkit-linear-gradient(left, #5b483a 0%, #262425 100%), #211F20;
@@ -231,7 +234,7 @@ body {
 .heder__logo .title {
   font-family: Georgia;
   font-style: normal;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
@@ -242,7 +245,7 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 15px;
   letter-spacing: 0.1em;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -322,7 +325,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 0,39rem;
-  gap: 41px 0;
+  gap: 42px 0;
 }
 
 .start-content .subheading {
@@ -337,7 +340,7 @@ body {
 
 .start-button {
   background: #F1CDB3;
-  width: 208px;
+  width: 207px;
   height: 52px;
 }
 
@@ -348,7 +351,7 @@ body {
 .button {
   font-family: Georgia;
   font-style: normal;
-  font-size: 17px;
+  font-size: 1.7rem;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
@@ -622,10 +625,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #F1CDB3;
   gap: 0 15px;
   border-radius: 9px;
-  padding: 10px 15px;
   width: 350px;
   height: 43px;
 }
@@ -638,7 +646,7 @@ body {
   font-family: Arial;
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: 18px;
   color: #B2B2B2;
 }
@@ -665,8 +673,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 40px 0;
-  padding-top: 17px;
+  gap: 39px 0;
+  padding-top: 16px;
 }
 
 .contacts {

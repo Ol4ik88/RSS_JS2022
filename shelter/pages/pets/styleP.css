@@ -32,7 +32,6 @@ html, body {
   width: 100%;
   font-size: 100%;
   line-height: 1;
-  font-size: 15px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -110,33 +109,33 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Georgia;
   font-style: italic;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 130%;
   color: rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-  font-size: 44px;
+  font-size: 4.4rem;
   line-height: 130%;
   color: #545454;
 }
 
 h3 {
-  font-size: 35px;
+  font-size: 3.5rem;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -146,16 +145,20 @@ p {
   font-family: Arial;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 160%;
   color: #4C4C4C;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
   font-family: Arial;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 160%;
   background-color: #FFFFFF;
 }
@@ -227,7 +230,7 @@ body {
 .heder__logo .title {
   font-family: Georgia;
   font-style: normal;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #545454;
@@ -237,7 +240,7 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #292929;
@@ -358,7 +361,7 @@ body {
 .button {
   font-family: Georgia;
   font-style: normal;
-  font-size: 17px;
+  font-size: 1.7rem;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
