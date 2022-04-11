@@ -167,7 +167,6 @@ body {
 }
 
 .wrapper {
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,13 +299,13 @@ body {
           justify-content: flex-end;
 }
 
-.start {
+.not-only {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.start__container {
+.not-only__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,7 +315,7 @@ body {
   gap: 0 42px;
 }
 
-.start-content {
+.not-only__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,7 +327,7 @@ body {
   gap: 42px 0;
 }
 
-.start-content .subheading {
+.not-only__content .subheading {
   color: #CDCDCD;
 }
 
@@ -386,7 +385,7 @@ body {
           justify-content: center;
 }
 
-.about-content {
+.about__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,11 +403,11 @@ body {
   max-width: 370px;
 }
 
-.pets {
+.our-friends {
   background-color: #F6F6F6;
 }
 
-.pets__container {
+.our-friends__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -422,7 +421,7 @@ body {
           align-items: center;
 }
 
-.pets__text-heading {
+.our-friends__text-heading {
   max-width: 400px;
   max-height: 90px;
   text-align: center;
@@ -503,7 +502,7 @@ body {
   border: 2px solid transparent;
 }
 
-.card_subheading {
+.card__subheading {
   line-height: 22px;
 }
 
@@ -524,7 +523,7 @@ body {
   height: 52px;
 }
 
-.button_pets {
+.button_our-frends {
   background: #F1CDB3;
   width: 261px;
   height: 52px;
