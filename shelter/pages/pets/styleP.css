@@ -482,11 +482,11 @@ body {
 }
 
 .contacts {
-  min-width: 279px;
+  max-width: 279px;
 }
 
 .locations {
-  min-width: 302px;
+  max-width: 302px;
   gap: 32px 0;
 }
 
@@ -506,4 +506,42 @@ body {
 
 .footer__text {
   color: #F1CDB3;
+}
+
+@media screen and (max-width: 1279px) {
+  [class*="__container"] {
+    max-width: 1279px;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+  .card-7, .card-8 {
+    display: none;
+  }
+  .our-friends__container {
+    gap: 30px 0;
+  }
+  .our-friends__cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (270px)[2];
+        grid-template-columns: repeat(2, 270px);
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+    padding: 0;
+  }
+  .pagination {
+    margin-top: 10px;
+  }
+  .section {
+    padding: 80px 0 75px 0;
+  }
+  .footer__content {
+    gap: 65px 59px;
+    padding: 16px 34px 0 34px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
