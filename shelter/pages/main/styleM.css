@@ -748,14 +748,15 @@ body {
     gap: 30px;
   }
   .list {
-    margin: 0 5.5%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (170px)[3];
-        grid-template-columns: repeat(3, 170px);
+    -ms-grid-columns: (33.3%)[3];
+        grid-template-columns: repeat(3, 33.3%);
     -ms-grid-rows: (113px)[3];
         grid-template-rows: repeat(3, 113px);
     gap: 55px 60px;
+    margin: 0 10%;
+    width: 72%;
   }
   .donation__content {
     -webkit-box-orient: vertical;
@@ -776,11 +777,5 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  /* .footer__info {
-		flex:1;
-	} */
-  .footer__img {
-    grid-column: span 2;
   }
 }
