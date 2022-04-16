@@ -742,6 +742,8 @@ body {
     gap: 19px;
   }
   .footer__content {
+    max-width: 708px;
+    margin: 0 auto;
     gap: 65px 59px;
     padding: 14px 34px 0 34px;
     -ms-flex-wrap: wrap;
