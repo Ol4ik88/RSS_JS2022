@@ -538,6 +538,73 @@ body {
   height: 52px;
 }
 
+.carousel-wrapper {
+  width: 990px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  left: -1080px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 90px;
+}
+
+@-webkit-keyframes move-left {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
+  }
+}
+
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
 .help__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -758,8 +825,49 @@ body {
   .slider__cards {
     gap: 0 40px;
   }
-  .card:last-child {
-    display: none;
+  /* .card{
+		&:last-child{
+			display: none;
+		}
+	} */
+  .carousel-wrapper {
+    width: 580px;
+  }
+  .carousel {
+    left: -620px;
+    gap: 0 40px;
+  }
+  @-webkit-keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @-webkit-keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
   }
   .list {
     display: -ms-grid;
@@ -823,35 +931,6 @@ body {
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  /* .menu__icon{
-		z-index: 5;
-		display: block;
-		position: relative;
-		width: 30px;
-		height: 22px;
-		cursor:url("../../assets/icons/icon.svg"), pointer;
-		& span, &::before, &::after{
-			left:0;
-			position: absolute;
-			height: 10%;
-			width: 100%;
-			transition: all 0.3s ease 0s;
-			background-color: $color-primary;
-		}
-		&::before, &::after{
-			content: "";
-		}
-		&::before{
-			top:0;
-		}
-		&::after{
-			bottom: 0;
-		}
-		& span{
-			top:50%;
-			transform: scale(1) translate(0px, -50%);
-		}
-	} */
   .overlay {
     position: fixed;
     top: 0;
@@ -973,8 +1052,47 @@ body {
         -ms-flex-order: -1;
             order: -1;
   }
-  .card:nth-last-child(-n+2) {
-    display: none;
+  .carousel-wrapper {
+    width: 270px;
+  }
+  .carousel {
+    left: -310px;
+  }
+  @-webkit-keyframes move-left {
+    from {
+      left: -310px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -310px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  /* .transition-left{
+		animation-name: move-left;
+		animation-duration: 3s;
+	} */
+  @-webkit-keyframes move-right {
+    from {
+      left: -310px;
+    }
+    to {
+      left: -620px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -310px;
+    }
+    to {
+      left: -620px;
+    }
   }
   .help__container {
     gap: 41px 0;
