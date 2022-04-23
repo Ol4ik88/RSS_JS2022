@@ -307,10 +307,6 @@ body {
   transition: all 0.5s ease;
 }
 
-.menu__item:nth-last-child(-n+2) {
-  pointer-events: none;
-}
-
 .not-only__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -825,11 +821,6 @@ body {
   .slider__cards {
     gap: 0 40px;
   }
-  /* .card{
-		&:last-child{
-			display: none;
-		}
-	} */
   .carousel-wrapper {
     width: 580px;
   }
@@ -955,14 +946,26 @@ body {
   }
   .menu__list {
     z-index: 4;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: fixed;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     top: 0;
     right: -100%;
     width: 320px;
     height: 100%;
     background-color: #292929;
-    padding: 158px 38px;
+    padding: 0px 38px;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;

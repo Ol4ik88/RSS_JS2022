@@ -6,6 +6,7 @@ const menuIcon=document.querySelector('.menu__icon');
 const overlay=document.querySelector('.overlay');
 const logoBurger=document.querySelector('.header__logo-burger');
 const menulist=document.querySelector('.menu__list');
+const menuLinks=document.querySelectorAll('.menu__link');
 
 menuIcon.addEventListener("click", function(e){
 	overlay.classList.toggle("active");
@@ -14,6 +15,21 @@ menuIcon.addEventListener("click", function(e){
 	menulist.classList.toggle("active");
 	document.body.classList.toggle('lock');
 });
+
+if(menuLinks.length>0){
+	menuLinks.forEach(menuLink =>{
+		menuLink.addEventListener('click',onMenuLinkClick);
+	});
+	function onMenuLinkClick() {
+		if (menuIcon.classList.contains('active')){
+			overlay.classList.remove("active");
+			logoBurger.classList.remove("active");
+			menuIcon.classList.remove("active");
+			menulist.classList.remove("active");
+			document.body.classList.remove('lock');
+		}
+	}
+}
 overlay.addEventListener("click", function(e){
 	overlay.classList.remove("active");
 	logoBurger.classList.remove("active");
@@ -37,15 +53,16 @@ function getRandomPrevCards(max) {
 		if (arrRandom.indexOf(number)==-1) 
 			arrRandom.push(number);
 	}
+	console.log("arrRandom1", arrRandom);
 	return arrRandom;
 }
-if(screen.width >= 1280) {
+if(window.innerWidth >= 1280) {
 	randomNumberForCards=getRandomPrevCards(countCards);
 	activeItemCards=randomNumberForCards.slice(0,coundCardsActive);
 	nextItemCards=randomNumberForCards.slice(coundCardsActive);
 	}
 else {
-	if(screen.width >=768) {
+	if(window.innerWidth >=768) {
 		countCards=4;
 		coundCardsActive=2;
 		randomNumberForCards=getRandomPrevCards(countCards);
@@ -61,7 +78,8 @@ else {
 			nextItemCards=randomNumberForCards.slice(coundCardsActive);
 			}
 }
-
+console.log("activeItemCards1", activeItemCards);
+console.log("nextItemCards1", nextItemCards);
 //slider
 const BTN_LEFT=document.querySelector('.control_next');
 const BTN_RIGHT=document.querySelector('.control_prev');
@@ -87,6 +105,7 @@ const createCard = (numberPets)=>{
 	return CARD;
 }
 //init slider
+function init(){
 	for (let i=0; i<coundCardsActive; i++){
 		const CARD_LEFT = createCard(nextItemCards[i]);
 		ITEM_LEFT.appendChild(CARD_LEFT);
@@ -95,7 +114,9 @@ const createCard = (numberPets)=>{
 		const CARD_RIGHT = createCard(nextItemCards[i]);
 		ITEM_RIGHT.appendChild(CARD_RIGHT);
 	}
+}
 
+init();
 	const moveLeft = () => {
 	CAROUSEL.classList.add('transition-left');
 	BTN_LEFT.removeEventListener('click',moveLeft);
@@ -115,21 +136,25 @@ CAROUSEL.addEventListener('animationend', (animationEvent) => {
 	randomNumberForCards=getRandomPrevCards(countCards);
 	activeItemCards=randomNumberForCards.slice(0,coundCardsActive);
 	nextItemCards=randomNumberForCards.slice(coundCardsActive);
-
+	console.log("arrRandom", randomNumberForCards);
+	console.log("activeItemCards", activeItemCards);
+	console.log("nextItemCards", nextItemCards);
 	if (animationEvent.animationName === 'move-left'){
 		CAROUSEL.classList.remove('transition-left');
 		changedItem=ITEM_LEFT;
-		ITEM_ACTIVE.innerHTML=ITEM_LEFT.innerHTML;
 	} else {
 		CAROUSEL.classList.remove('transition-right');
 		changedItem=ITEM_RIGHT;
-		ITEM_ACTIVE.innerHTML=ITEM_RIGHT.innerHTML;
 	}
-	changedItem.innerHTML="";
+	ITEM_ACTIVE.innerHTML=changedItem.innerHTML;
+	ITEM_RIGHT.innerHTML="";
+	ITEM_LEFT.innerHTML="";
 	
 	for (let i=0; i<coundCardsActive; i++){
-		const CARD = createCard(nextItemCards[i]);
-		changedItem.appendChild(CARD);
+		const CARD_LEFT= createCard(nextItemCards[i]);
+		ITEM_RIGHT.appendChild(CARD_LEFT);
+		const CARD_RIGHT= createCard(nextItemCards[i]);
+		ITEM_LEFT.appendChild(CARD_RIGHT);
 	}
 	BTN_LEFT.addEventListener('click',moveLeft);
 	BTN_RIGHT.addEventListener('click',moveRight);
