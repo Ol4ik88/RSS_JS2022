@@ -53,7 +53,6 @@ function getRandomPrevCards(max) {
 		if (arrRandom.indexOf(number)==-1) 
 			arrRandom.push(number);
 	}
-	console.log("arrRandom1", arrRandom);
 	return arrRandom;
 }
 if(window.innerWidth >= 1280) {

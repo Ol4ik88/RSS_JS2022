@@ -231,9 +231,9 @@ body {
   right: -100%;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .header__logo-burger.active {
@@ -911,11 +911,11 @@ body {
     top: 20px;
     right: 53px;
     cursor: url("../../assets/icons/icon.svg"), pointer;
-    -webkit-transition: -webkit-transform 0.3s ease 0s;
-    transition: -webkit-transform 0.3s ease 0s;
-    -o-transition: transform 0.3s ease 0s;
-    transition: transform 0.3s ease 0s;
-    transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+    -webkit-transition: -webkit-transform 0.5s ease 0s;
+    transition: -webkit-transform 0.5s ease 0s;
+    -o-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
   }
   .menu__icon.active {
     -webkit-transform: rotate(90deg);
@@ -932,9 +932,9 @@ body {
     background-color: rgba(41, 41, 41, 0.6);
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
     overflow: auto;
   }
   .overlay.active {
@@ -966,9 +966,9 @@ body {
     height: 100%;
     background-color: #292929;
     padding: 0px 38px;
-    -webkit-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
   }
   .menu__list.active {
     right: 0;
@@ -1038,6 +1038,9 @@ body {
   .our-friends__container {
     gap: 41px 0;
   }
+  .new-string {
+    width: 100%;
+  }
   .slider {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1057,6 +1060,9 @@ body {
   }
   .carousel-wrapper {
     width: 270px;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
   .carousel {
     left: -310px;
@@ -1077,10 +1083,6 @@ body {
       left: 0px;
     }
   }
-  /* .transition-left{
-		animation-name: move-left;
-		animation-duration: 3s;
-	} */
   @-webkit-keyframes move-right {
     from {
       left: -310px;
