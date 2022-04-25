@@ -10,23 +10,28 @@
 </head>
 <body>
 	<div class="wrapper">
+		<div class="overlay"></div>
 		<header class="header" id="header">
 			<div class="header__container">
 				<a class="header__logo" href="#!">
 					<h1 class="title">Cozy House</h1>
 					<span class="subtitle">Shelter for pets in Boston</span>
 				</a>
-					<div class="header__menu menu">
-						<div class="menu__icon">
-							<span></span>
-						</div>
-						<nav class="menu__body">
-							<ul class="menu__list">
-								<li class="menu__item"><a href="../main/index.html" class="menu__link menu__link_active">About the shelter</a></li>
-								<li class="menu__item"><a href="../pets/pets.html" class="menu__link">Our pets</a></li>
-								<li class="menu__item"><a href="#help" class="menu__link">Help the shelter</a></li>
-								<li class="menu__item"><a href="#footer" class="menu__link">Contacts</a></li>
-							</ul>
+				<div class="header__menu menu">
+					<a class="header__logo header__logo-burger" href="#!">
+						<div class="title">Cozy House</div>
+						<span class="subtitle">Shelter for pets in Boston</span>
+					</a>
+					<div class="menu__icon">
+						<img src="../../assets/icons/Burger.svg" alt="menu">
+					</div>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="../main/index.html" class="menu__link menu__link_active">About the shelter</a></li>
+							<li class="menu__item"><a href="../pets/pets.html" class="menu__link">Our pets</a></li>
+							<li class="menu__item"><a href="#help" class="menu__link">Help the shelter</a></li>
+							<li class="menu__item"><a href="#footer" class="menu__link">Contacts</a></li>
+						</ul>
 					</nav>
 				</div>
 			</div>
@@ -60,24 +65,21 @@
 				<div class="our-friends__container">
 					<h3 class="our-friends__text-heading">Our friends who<br>are looking for a house</h3>
 					<div class="slider">
+						<div class="new-string"></div>
 						<button class="slider__control control_next"><img src="../../assets/icons/Arrow.svg" alt="next" ></button>
-						<div class="slider__cards">
-						<div class="card card-1">
-							<img src="../../assets/images/pets-katrine.png" alt="img_pets" class="img_pets">
-							<h4 class="card__subheading">Katrine</h4>
-							<button class="button card__button">Learn more</button>
+						<div class="carousel-wrapper">
+							<div class="carousel">
+								<div class="slider__cards item-left">
+									
+								</div>
+								<div class="slider__cards item-active">
+									
+								</div>
+								<div class="slider__cards item-right">
+									
+								</div>
+							</div>
 						</div>
-						<div class="card card-2">
-							<img src="../../assets/images/pets-jennifer.png" alt="img_pets" class="img_pets">
-							<h4 class="card__subheading">Jennifer</h4>
-							<button class="button card__button">Learn more</button>
-						</div>
-						<div class="card card-3">
-							<img src="../../assets/images/pets-woody.png" alt="img_pets" class="img_pets">
-							<h4 class="card__subheading">Woody</h4>
-							<button class="button card__button">Learn more</button>
-						</div>
-					</div>
 						<button class="slider__control control_prev"><img src="../../assets/icons/Arrow.svg" alt="prev"></button>
 					</div>
 					<a href="../pets/pets.html" class="button button_our-frends">Get to know the rest</a>
@@ -176,5 +178,6 @@
 			</div>
 		</footer>
 	</div>
+	<script type="module" src="../main/scriptM.js"></script>
 	</body>
 </html>
