@@ -167,6 +167,10 @@ body {
   background: url(../../assets/icons/noise_transparent@2x.png), linear-gradient(to right, #5b483a 0%, #262425 100%), #211F20;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -941,9 +945,6 @@ body {
     visibility: visible;
     opacity: 1;
   }
-  body.lock {
-    overflow: hidden;
-  }
   .menu__list {
     z-index: 4;
     display: -webkit-box;
@@ -1182,4 +1183,202 @@ body {
   .footer__img {
     width: 260px;
   }
+}
+
+.description {
+  padding: 30px 0;
+  font-size: 1.3rem;
+  line-height: 110%;
+}
+
+@media screen and (max-width: 1279px) {
+  .description {
+    padding: 10px 0;
+  }
+}
+
+.modal__list {
+  padding-left: 17px;
+}
+
+.modal__list li {
+  list-style: disc;
+  color: #F1CDB3;
+}
+
+.modal__list li span {
+  color: #000000;
+  font-family: 'Georgia';
+  font-size: 1.5rem;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(141, 139, 139, 0.6);
+  -webkit-box-shadow: 0px 4px 4px rgba(121, 116, 116, 0.25);
+          box-shadow: 0px 4px 4px rgba(121, 116, 116, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal_window {
+  position: relative;
+  width: 952px;
+  height: 552px;
+}
+
+@media screen and (max-width: 1279px) {
+  .modal_window {
+    width: 685px;
+    height: 402px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal_window {
+    width: 270px;
+    height: 393px;
+  }
+}
+
+.modal {
+  position: relative;
+  top: 52px;
+  background: #FAFAFA;
+  border-radius: 9px;
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  width: 900px;
+  height: 500px;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1279px) {
+  .modal {
+    width: 630px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 240px;
+    height: 341px;
+  }
+}
+
+.modal_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal_content-img {
+  width: 500px;
+  height: 500px;
+}
+
+.modal_content-img img {
+  width: 100%;
+  border-radius: 9px;
+}
+
+@media screen and (max-width: 1279px) {
+  .modal_content-img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal_content-img {
+    display: none;
+  }
+}
+
+.modal_content-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 351px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px 0;
+  padding: 50px 20px 0 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .modal_content-text {
+    padding: 9px 9px 0 0;
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal_content-text {
+    padding: 10px;
+    width: 220px;
+    height: 321px;
+  }
+}
+
+div:not(:hover) .modal__close-icon,
+.modal__close-icon .hover {
+  background: #FDDCC4;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.modal__close-icon {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 52px;
+  height: 52px;
+  top: 0px;
+  right: 0px;
+  cursor: url("../../assets/icons/icon.svg"), pointer;
+  border: 2px solid #F1CDB3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.modal__close-icon svg {
+  pointer-events: none;
+}
+
+.modal__close-icon:hover {
+  background: #FDDCC4;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }

@@ -1,5 +1,6 @@
 "use strict";
 import {pets} from '../../assets/dataPets/pets.js'
+import {Modal} from '../../assets/Modal.js';
 
 const menuIcon=document.querySelector('.menu__icon');
 const overlayAll=document.querySelectorAll('.overlay');
@@ -79,7 +80,9 @@ function getRandomPagination(max) {
 const createCard = (numberPets)=>{
 	const CARD = document.createElement('div');
 	CARD.classList.add('card');
+	CARD.setAttribute('data-id',numberPets);
 	const IMG = document.createElement('img');
+	IMG.setAttribute('alt','pets');
 	IMG.src=pets[numberPets].img;
 	CARD.appendChild(IMG);
 	const NAME_PETS = document.createElement('h4');
@@ -180,4 +183,68 @@ CONTROL_PREV.addEventListener('click', () => {
 	CURRENT_PAGE.innerHTML=currentPage+1;
 });
 
+//MODAL CONTENT
+const createContentModal = (numberPets) =>{
+	const MODAL_CONTENT=document.createElement('div');
+	MODAL_CONTENT.classList.add('modal_content');
 
+	const MODAL_CONTENT_IMG=document.createElement('div');
+	MODAL_CONTENT_IMG.classList.add('modal_content-img');
+	MODAL_CONTENT.appendChild(MODAL_CONTENT_IMG);
+
+	const IMG = document.createElement('img');
+	IMG.src=pets[numberPets].img;
+	IMG.setAttribute('alt','pets');
+	MODAL_CONTENT_IMG.appendChild(IMG);
+
+	const MODAL_CONTENT_TEXT=document.createElement('div');
+	MODAL_CONTENT_TEXT.classList.add('modal_content-text');
+
+	const NAME_PETS = document.createElement('h3');
+	
+	NAME_PETS.innerHTML=pets[numberPets].name;
+	MODAL_CONTENT_TEXT.appendChild(NAME_PETS);
+
+	const TYPE_PETS = document.createElement('h4');
+	
+	TYPE_PETS.innerHTML=`${pets[numberPets].type} - ${pets[numberPets].breed}`;
+	MODAL_CONTENT_TEXT.appendChild(TYPE_PETS);
+
+	const DESCRIPTION = document.createElement('h5');
+	DESCRIPTION.classList.add('description');
+	DESCRIPTION.innerHTML=pets[numberPets].description;
+	MODAL_CONTENT_TEXT.appendChild(DESCRIPTION);
+
+	const LIST = document.createElement('ul');
+	LIST.classList.add('modal__list');
+	LIST.innerHTML=`<li><span><b>Age: </b>${pets[numberPets].age}</span></li>
+	<li><span><b>Inoculations: </b>${pets[numberPets].inoculations}</span></li>
+	<li><span><b>Diseases: </b>${pets[numberPets].diseases}</span></li>
+	<li><span><b>Parasites: </b>${pets[numberPets].parasites}</span></li>`;
+	MODAL_CONTENT_TEXT.appendChild(LIST);
+
+	MODAL_CONTENT.appendChild(MODAL_CONTENT_TEXT);
+
+	return MODAL_CONTENT;
+}
+
+const addCardClickHandler = ()=>{
+	document.querySelector('.our-friends__cards').addEventListener('click', (e)=>{
+		if(e.target.closest('.card')){
+			let clickedCardId=e.target.closest('.card').getAttribute('data-id');
+			console.log(clickedCardId);
+			document.body.classList.toggle('lock');
+			let card=createContentModal(clickedCardId);
+			renderModalWindow(card);
+		}
+		
+	})
+}
+const renderModalWindow=(content)=>{
+	let modal = new Modal('modal');
+	modal.buildModal(content);
+}
+///test
+window.onload=function(){
+	addCardClickHandler();
+} 
