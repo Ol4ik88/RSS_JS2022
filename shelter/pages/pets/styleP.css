@@ -164,6 +164,10 @@ body {
   background-color: #FFFFFF;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -613,9 +617,6 @@ body {
   .overlay.active {
     visibility: visible;
     opacity: 1;
-  }
-  body.lock {
-    overflow: hidden;
   }
   .menu__list {
     z-index: 4;
