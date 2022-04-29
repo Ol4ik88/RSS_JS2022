@@ -141,7 +141,9 @@ CONTROL_END.addEventListener('click', () => {
 	CONTROL_END.classList.toggle("disabled");
 	CONTROL_START.classList.remove("disabled");
 	CONTROL_PREV.classList.remove("disabled");
+	currentPage=endPage;
 	CURRENT_PAGE.innerHTML=endPage+1;
+	
 });
 CONTROL_START.addEventListener('click', () => {
 	showPage(startPage);
@@ -149,7 +151,8 @@ CONTROL_START.addEventListener('click', () => {
 	CONTROL_END.classList.remove("disabled");
 	CONTROL_START.classList.toggle("disabled");
 	CONTROL_PREV.classList.toggle("disabled");
-	CURRENT_PAGE.innerHTML=startPage+1;
+	currentPage=startPage;
+	CURRENT_PAGE.innerHTML=startPage+1;	
 });
 CONTROL_NEXT.addEventListener('click', () => {
 	if (currentPage==(endPage-1)){
