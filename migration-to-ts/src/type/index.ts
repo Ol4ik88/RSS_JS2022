@@ -1,10 +1,10 @@
 export interface IEverything {
   status: string;
   totalResults: number;
-  articles: Array<Article>;
+  articles: Array<IArticle>;
 }
 
-type Article = {
+export interface IArticle {
   source: 
   {
     id: string | null;
@@ -21,10 +21,10 @@ type Article = {
 
 export interface ISources {
   status: string;
-  sources: Array<Source>;
+  sources: Array<ISource>;
 }
 
-type Source = {
+export interface ISource {
   id: string;
   name: string;
   description: string;
