@@ -1,0 +1,38 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	gap:20px 0px;
+	background:$font-white;
+	border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  min-height: 354px;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+  &:hover{
+    background: $color-sky;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    }
+  &.active{
+    box-shadow: 0 0 5px 1px $color-orange;
+  }
+}
+.card__title{
+  font-size: 2.3rem;
+}
+.card__prop{
+  font-size: 1.6rem;
+}
+.card__prop li:last-child{
+  background-color:$color-lime;
+  border: 1px solid $color-bg;
+  border-radius: 10%;
+  padding: 3px;  
+}
+.card__prop li:nth-last-child(2){
+  color: $color-terracotta;
+  font-weight: 700;
+} 
