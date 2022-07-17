@@ -48,7 +48,7 @@ function rangeInit (rangeItem:string, elemMin:string,
 
 export const initSliders = () => {
   rangeInit('range-price', 'min-price', 'max-price', 
-  10, 50, nameRange[1]);
+  5, 50, nameRange[1]);
   rangeInit('range-amount', 'min-amount', 'max-amount',
     1,20, nameRange[2]);
 } 

@@ -91,7 +91,7 @@ export const addAgeClickHandler = () => {
       if(clickedButton){
         filterToValue(clickedButton, valueAge, filter.age);
       } 
-        cards.filterProducts(cards.catalog, /* filter,  */car.productOfCar);
+        cards.filterProducts(cards.catalog, car.productOfCar);
     });
   }
 }

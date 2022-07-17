@@ -40,7 +40,7 @@ export class Products {
       );
     }
     this.renderCards(this.curProductsOnPage);
-    car.updateCar(productOfCar);
+    car.updateCard(productOfCar);
   }
 
   renderCards(data:IProduct[]){

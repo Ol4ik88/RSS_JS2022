@@ -30,13 +30,13 @@ export const car: ICar = {
     }
   },
 
-  updateCar(productOfCar:Set<string>){
-  let [...valueCar]=[...productOfCar];
-    productOfCar.clear();
-    valueCar.forEach((elem)=>{
-      this.add(elem);
-      this.renderCar();
-    })
+  updateCard(productOfCar:Set<string>){
+    productOfCar.forEach(elem => {
+      let cardClick=document.querySelector(`div[data-id="${elem}"]`);
+      if(cardClick) {
+        cardClick.classList.add("active");
+      }
+    });
   }
   
 }
