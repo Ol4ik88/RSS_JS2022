@@ -1,0 +1,85 @@
+.filter-container {
+  max-width:300px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: $box-shadow2;
+  border-radius: 5%;
+}
+.filters__title {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.filters__subtitle {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.filters__slider {
+  margin: 3.4rem 0 2rem;
+}
+.filters__values {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.filters__values input {
+  width: 30%;
+  border: none;
+  height: 30px;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  text-align: center;
+  font-size: 1.6rem;
+  color: $font-white;
+}
+.filters__values input:nth-child(1) {
+  background:$color-lime;
+  box-shadow: 0 0 16px $color-lime
+}
+.filters__values input:nth-child(2) {
+  background: $color-orange;
+  box-shadow: 0 0 16px $color-orange;
+}
+.filters__values input:focus {
+  outline: none;
+}
+.noUi-connect {
+  background: linear-gradient(90deg, $color-lime 0%, $color-orange 100%);
+}
+.noUi-target {
+  box-shadow: 0 0 16px $color-lime;
+  border: none;
+  background: $font-white;
+}
+.noUi-handle {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.24);
+  border: none;
+  border-radius: 10%;
+  background: $font-white;
+}
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+.noUi-handle-lower {
+  background: $color-lime;
+  box-shadow: 0 0 16px $color-lime;
+}
+.noUi-handle-upper {
+  background: $color-orange;
+  box-shadow: 0 0 16px $color-orange;
+}
+.noUi-horizontal {
+  height: 13px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  right: -12px;
+}
+.noUi-tooltip {
+  display: none;
+}
+.noUi-active .noUi-tooltip {
+  display: block;
+}
