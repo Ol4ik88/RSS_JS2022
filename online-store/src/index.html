@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Open+Sans&family=Varela+Round&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- <div class="overlay"></div> -->
+    <header class="header" id="header">
+      <div class="container header-container">
+        <div class="header-info">
+          <a href="tel:+136745677554" class="number-phone">
+            <img src="./assets/phone.svg" alt="phone">
+          </a>
+          <span>+136745677554</span> 
+          <span>Reception of orders on the website: ROUND THE CLOCK</span>
+          <ul class=header-msgs>
+            <li><a href="#/"><img src="./assets/inst-icon.svg" alt=""></a></li>
+            <li><a href="#/"><img src="./assets/vk-icon.svg" alt=""></a></li>
+            <li><a href="#/"><img src="./assets/tel.svg" alt=""></a></li>
+        </ul>
+      </div>
+        <div class="header-title">
+          <nav class="nav">
+            <a class="logo" href="#/">Home</a>
+            <h1>Toy Store</h1>
+          </nav>
+          <div class="car">
+            <span>2</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <section class="filters">
+          <div class="filter-container">
+            <div class="filters__title">
+              <h2>Range filters</h2>
+            </div>
+            <div class="filters__subtitle">
+              <h3>by price</h3>
+            </div>
+            <div class="filters__slider">
+              <div id="range-price"></div>
+            </div>
+            <div class="filters__values">
+              <input id="min-price" type="text"/> 
+              <input id="max-price" type="text"/> 
+            </div>
+            <div class="filters__subtitle">
+              <h3>by amount</h3>
+            </div>
+            <div class="filters__slider">
+              <div id="range-amount"></div>
+            </div>
+            <div class="filters__values">
+              <input id="min-amount" type="text"/> 
+              <input id="max-amount" type="text"/> 
+            </div>
+          </div>
+          <div class="filter-container">
+            <div class="filters__title">
+              <h2>Filters by value</h2>
+            </div>
+            <div class="filter filter-By-Brand">
+              <div class="filters__subtitle">
+                <h3>by brand</h3>
+              </div>
+              <ul class="list list-brand">
+                <button class="button button_aurora">Aurora</button>
+                <button class="button button_funcy">Funcy</button>
+                <button class="button button_kids">Kids</button>
+                <button class="button button_cubika">Cubika</button>
+              </ul>
+            </div>
+            <div class="filter filter-By-Сategory">
+              <div class="filters__subtitle">
+                <h3>by category</h3>
+              </div>
+              <ul class="list list-catigory">
+                <button class="button button_stuffed">Stuffed</button>
+                <button class="button button_wooden">Wooden</button>
+                <button class="button button_educational">Education</button>
+              </ul>
+            </div>
+            <div class="filter filter-By-age">
+              <div class="filters__subtitle">
+                <h3>by age</h3>
+              </div>
+              <ul class="list list-age">
+                <button class="button button_small">0+</button>
+                <button class="button button_large">3+</button>
+              </ul>
+            </div>
+            <div class="filter filter-By-Sale">
+              <div class="filters__subtitle">
+                <h3>only sale</h3>
+              </div>
+              <input type="checkbox" class="sale-input" id="checkbox">
+              <label for="checkbox" class="sale-input-label"></label>
+            </div>
+          </div>
+          <div class="filter-container">
+            <div class="filters__title">
+              <h2>Search</h2>
+            </div>
+            <div class="search-wrap">
+              <input placeholder="Enter text" type="search" 
+                    class="search" value="" autofocus>
+            </div>
+            <div class="filters__title">
+              <h2>Sort</h2>
+            </div>
+            <select class="sort" id="sort">
+              <option value="nameAZ">by name ascending A-Z</option>
+              <option value="nameZA">by name descending Z-A</option>
+              <option value="priceAZ">by price ascending</option>
+              <option value="priceZA">by price descending</option>
+            </select>
+            <div class="reset">
+              <button class="reset-filters">Reset filters</button>
+              <button class="reset-settings">Reset settings</button>
+            </div>
+          </div>
+        </section>
+        <section class="gallery">
+          <div class="listing"></div>
+        </section>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="link">
+          <p>
+            <a href="https://rs.school/js/">
+              <img src="./assets/rs_school_js.svg" width="50" height="50" alt="logo">
+            </a>
+          </p>
+          <p>
+            <a href="https://github.com/Ol4ik88">
+              <img src="./assets/GitHub-Logo.svg" width="30" height="30" alt="logo">
+              <span>Slapik Olga, 2022</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </div>
+</html>
