@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
+<desc>Created with Fabric.js 3.6.2</desc>
+<defs>
+</defs>
+<g transform="matrix(1.56 0 0 1.56 142.97 289.84)" id="Layer_1" clip-path="url(#CLIPPATH_5)"  >
+<radialGradient id="SVGID_radial-gradient_3" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -27.5 -121.5)"  cx="27.5" cy="121.5" r="148.5" fx="27.5" fy="121.5">
+<stop offset="0%" style="stop-color:rgb(255,214,118);stop-opacity: 1"/>
+<stop offset="25%" style="stop-color:rgb(242,164,84);stop-opacity: 1"/>
+<stop offset="38%" style="stop-color:rgb(240,92,60);stop-opacity: 1"/>
+<stop offset="70%" style="stop-color:rgb(194,47,134);stop-opacity: 1"/>
+<stop offset="96%" style="stop-color:rgb(102,102,173);stop-opacity: 1"/>
+<stop offset="99%" style="stop-color:rgb(92,108,178);stop-opacity: 1"/>
+</radialGradient>
+<clipPath id="CLIPPATH_5" >
+	<rect transform="matrix(1 0 0 1 36.5 -57.5)" id="clip-path" x="-64" y="-64" rx="24" ry="24" width="128" height="128" />
+</clipPath>
+<circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_radial-gradient_3); fill-rule: nonzero; opacity: 1;"  cx="0" cy="0" r="148.5" />
+</g>
+<g transform="matrix(1.56 0 0 1.56 121.67 574.03)" id="Layer_1" clip-path="url(#CLIPPATH_6)"  >
+<radialGradient id="SVGID_radial-gradient-2_4" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -13.87 -303.38)"  cx="13.87" cy="303.38" r="185.63" fx="13.87" fy="303.38">
+<stop offset="0%" style="stop-color:rgb(255,214,118);stop-opacity: 1"/>
+<stop offset="25%" style="stop-color:rgb(242,164,84);stop-opacity: 1"/>
+<stop offset="38%" style="stop-color:rgb(240,92,60);stop-opacity: 1"/>
+<stop offset="70%" style="stop-color:rgb(194,47,134);stop-opacity: 1"/>
+<stop offset="96%" style="stop-color:rgb(102,102,173);stop-opacity: 1"/>
+<stop offset="99%" style="stop-color:rgb(92,108,178);stop-opacity: 1"/>
+</radialGradient>
+<clipPath id="CLIPPATH_6" >
+	<circle transform="matrix(1 0 0 1 68.13 -94.38)" id="clip-path-2" cx="0" cy="0" r="5" />
+</clipPath>
+<circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_radial-gradient-2_4); fill-rule: nonzero; opacity: 1;"  cx="0" cy="0" r="185.63" />
+</g>
+<g transform="matrix(1.56 0 0 1.56 228.13 171.88)" id="Layer_1"  >
+<circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"  cx="0" cy="0" r="5" />
+</g>
+<g transform="matrix(1.56 0 0 1.56 200 200)" id="Layer_1"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"  transform=" translate(-64, -64)" d="M 64 48 A 16 16 0 1 0 80 64 A 16 16 0 0 0 64 48 Z m 0 24 a 8 8 0 1 1 8 -8 A 8 8 0 0 1 64 72 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1.56 0 0 1.56 200 200)" id="Layer_1"  >
+<rect style="stroke: rgb(255,255,255); stroke-width: 8; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"  x="-32" y="-32" rx="12" ry="12" width="64" height="64" />
+</g>
+</svg>
