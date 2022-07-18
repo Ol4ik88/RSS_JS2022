@@ -31,8 +31,8 @@ export const car: ICar = {
     }
   },
 
-  updateCard(productOfCar:Set<string>){
-    productOfCar.forEach(elem => {
+  updateCard<T>(itemOfCar:Set<T>){
+    itemOfCar.forEach(elem => {
       let cardClick=document.querySelector(`div[data-id="${elem}"]`);
       if(cardClick) {
         cardClick.classList.add("active");
