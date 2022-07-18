@@ -446,11 +446,101 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(141, 139, 139, 0.6);
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.1);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+}
+
+.modal {
+  position: relative;
+  top: 52px;
+  background: #c6f0fa;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.1);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.1);
+  width: 400px;
+  height: 300px;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.modal__content {
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 20px;
+}
+
+div:not(:hover) .modal__close-icon,
+.modal__close-icon:hover {
+  background: #A5C926;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.modal__close-icon {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42px;
+  height: 42px;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  border: 3px solid #A5C926;
+  border-radius: 100px;
+}
+
+.modal__close-icon svg {
+  pointer-events: none;
+}
+
 html {
   font-size: 10px;
 }
 
 body {
+  position: relative;
   background: url("./assets/bg1.jpg") repeat;
   font-family: 'Varela Round';
   color: #000000;

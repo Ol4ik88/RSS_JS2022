@@ -1,4 +1,5 @@
 import {ICar} from '../type/type';
+import {Modal} from '../components/Modal';
 
 export const car: ICar = {
   
@@ -15,7 +16,7 @@ export const car: ICar = {
           this.productOfCar.add(idProduct);
             cardClick.classList.toggle("active");
         } else {
-          alert("Car full!");
+          renderModalWindow('Sorry, but all the slots in the cart are full');
         }
       }
     }
@@ -38,5 +39,10 @@ export const car: ICar = {
       }
     });
   }
-  
 }
+
+const renderModalWindow = (content: string | HTMLElement) => {
+  let modal = new Modal ('modal');
+  modal.buildModal(content);
+}
+

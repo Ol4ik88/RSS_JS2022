@@ -4,11 +4,13 @@
 @import "./style/filterByValue";
 @import "./style/searchSort";
 @import "./style/card";
+@import "./style/modal";
 
 html{
   font-size: 10px;
 }
 body{
+  position: relative;
   background: url('./assets/bg1.jpg') repeat;
   font-family:'Varela Round';
   color: $font-black;

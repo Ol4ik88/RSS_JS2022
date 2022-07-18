@@ -20,6 +20,7 @@ window.onload=function(){
   addSaleClickHandler();
   addClickFilterReset();
   addResetSettingClickHandler();
+
 }
 
 

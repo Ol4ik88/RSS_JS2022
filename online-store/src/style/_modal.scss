@@ -1,0 +1,60 @@
+.overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: $bg-overlay;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.modal {
+  position: relative;
+  top:52px;
+  background: $color-sky;
+  border-radius: 20px;
+  box-shadow: $box-shadow;
+  width: 400px;
+  height: 300px;
+  overflow: auto;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  @media screen and (max-width: 767px){
+    width: 200px;
+    height: 200px;
+  }
+}
+.modal__content {
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 20px;
+}
+
+div:not(:hover) .modal__close-icon,
+.modal__close-icon:hover {
+  background: $color-lime;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.modal__close-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  top:0px;
+  right: 0px;
+  cursor: pointer;
+  svg{
+    pointer-events: none;
+  }
+  border: 3px solid $color-lime;
+  border-radius: 100px;
+}
