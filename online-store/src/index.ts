@@ -1,27 +1,32 @@
 import { Products } from './components/Products';
 import { car } from './components/Car';
-import { addClickFilterReset, initSliders } from './components/slider';
+import * as slider from './components/slider';
 import './global.css';
-import { addBrandClickHandler, addSearchClickHandler, addCardClickHandler, addResetSettingClickHandler, addCategoryClickHandler, addAgeClickHandler, addSaleClickHandler} from './components/filter';
-import { addSortClickHandler} from './components/sorting';
+import * as filters from './components/filter';
+import * as sort from './components/sorting';
+import { filter, getLocalStorage, setLocalStorage } from './components/storage';
 
-car.renderCar();
+window.addEventListener('load', getLocalStorage);
 export const cards = new Products();
-cards.filterProducts(cards.catalog, car.productOfCar);
-initSliders();
 
 window.onload=function(){
-  addCardClickHandler();
-  addSortClickHandler();
-  addSearchClickHandler();
-  addBrandClickHandler();
-  addCategoryClickHandler();
-  addAgeClickHandler();
-  addSaleClickHandler();
-  addClickFilterReset();
-  addResetSettingClickHandler();
-
+  slider.initSliders();
+  sort.initSortFilter(filter.sort);
+  car.renderCar();
+  filters.initSearchFilter(filter.inputSearch);
+  filters.initFiltersValue();
+  filters.addCardClickHandler();
+  sort.addSortClickHandler();
+  filters.addSearchClickHandler();
+  filters.addBrandClickHandler();
+  filters.addCategoryClickHandler();
+  filters.addAgeClickHandler();
+  filters.addSaleClickHandler();
+  filters.addClickFilterReset();
+  filters.addResetSettingClickHandler();
 }
+
+window.addEventListener('beforeunload', setLocalStorage);
 
 
 
