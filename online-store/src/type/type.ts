@@ -15,7 +15,8 @@ export interface ICar {
   add(idProduct:string):void,
   getSizeCar():number,
   renderCar():void,
-  updateCard(productOfCar:Set<string>):void
+  updateCard(productOfCar:Set<string>):void,
+  clearCar():void
 }
 
 export interface IFilter {

@@ -38,6 +38,17 @@ export const car: ICar = {
         cardClick.classList.add("active");
       }
     });
+  },
+
+  clearCar() {
+    this.productOfCar.forEach(elem => {
+      let cardClick=document.querySelector(`div[data-id="${elem}"]`);
+      if(cardClick) {
+        cardClick.classList.remove("active");
+      }
+    });
+    car.productOfCar.clear();
+    car.renderCar();
   }
 }
 

@@ -112,6 +112,9 @@ export const addResetSettingClickHandler = () => {
     localStorage.clear();
   });
   resetSettings.addEventListener('click', clearFilters);
+  resetSettings.addEventListener('click', () => {
+    car.clearCar();
+  });
 }
 
 export const addClickFilterReset=() => {
