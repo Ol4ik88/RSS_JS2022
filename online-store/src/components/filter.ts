@@ -1,17 +1,8 @@
 import { cards } from '..';
-import { IFilter, IProduct, valueBrand, valueCategory, valueAge } from '../type/type';
+import { IProduct, valueBrand, valueCategory, valueAge} from '../type/type';
 import { car } from './Car';
-
-export let filter: IFilter = {
-  minPrice: 10,
-  maxPrice: 50,
-  minAmount: 1,
-  maxAmount: 20,
-  brand: new Set(),
-  category: new Set(),
-  age: new Set(),
-  onlySale: false
-}
+import { filter } from './storage';
+import * as noUiSlider from 'nouislider';
 
 export const addCardClickHandler = () => {
   let listing = document.querySelector('.listing');
@@ -39,6 +30,12 @@ export const addSearchClickHandler = () => {
 
 function filterSearch(val:string, list:IProduct[]) {
   return list.filter(elem => (~elem.name.toLowerCase().indexOf(val.toLowerCase())));
+}
+
+export const initSearchFilter = (val: string) => {
+  let inputSearch = document.querySelector('.search') as HTMLInputElement;
+  inputSearch.value = val;
+  cards.filterProducts(filterSearch(val, cards.catalog), car.productOfCar);
 }
 
 export const addBrandClickHandler = () => {
@@ -109,9 +106,69 @@ export const addSaleClickHandler = () => {
   }
 }
 
-export const addResetSettingClickHandler = ()=>{
+export const addResetSettingClickHandler = () => {
   let resetSettings = document.querySelector('.reset-settings') as HTMLSelectElement;
-  resetSettings.addEventListener('click', function(){
-    window.location.reload(); 
+  resetSettings.addEventListener('click', ()=>{
+    localStorage.clear();
   });
+  resetSettings.addEventListener('click', clearFilters);
+}
+
+export const addClickFilterReset=() => {
+  let resetFilters = document.querySelector('.reset-filters') as HTMLSelectElement;
+  resetFilters.addEventListener('click', clearFilters);
+}
+
+function clearFilters() {
+  const rangeAmount = document.getElementById('range-amount') as noUiSlider.target;
+  const rangePrice = document.getElementById('range-price') as noUiSlider.target;
+  rangeAmount.noUiSlider?.set([1,20]);
+  rangePrice.noUiSlider?.set([5,50]);
+  filter.brand.clear();
+  filter.category.clear();
+  filter.age.clear();
+  filter.onlySale = false;
+  cards.filterProducts(cards.catalog, car.productOfCar);
+  const btn = document.querySelectorAll('ul.list button');
+  btn.forEach(e => {
+    e?.classList.remove('active');
+  })
+  const btnSale = document.querySelector('.sale-input') as HTMLInputElement;
+  btnSale.checked = false;
+}
+
+const initBtnFilter = (setFilter: Set<string>, btns:NodeListOf<Element>, 
+    valueBtn:Record<string,string>) => {
+  let classBtn = new Set<string>();
+  for(let key in valueBtn) {
+    if (setFilter.has(valueBtn[key])) {
+      classBtn.add(key);
+    }
+  }
+  if (classBtn.size) {
+    classBtn.forEach(item => {
+      btns.forEach(e => {
+      if (e.classList.contains(item)) {
+            e.classList.add('active');
+          }
+      }); 
+    });
+  }
+}
+
+export const initFiltersValue = () => {
+  const btnBrand = document.querySelectorAll('ul.list-brand button');
+  if(btnBrand) {
+    initBtnFilter(filter.brand, btnBrand, valueBrand);
+  }
+  const btnCategory = document.querySelectorAll('ul.list-catigory button');
+  if(btnCategory) {
+    initBtnFilter(filter.category, btnCategory, valueCategory);
+  }
+  const btnAge = document.querySelectorAll('ul.list-age button');
+  if(btnAge) {
+    initBtnFilter(filter.age, btnAge, valueAge);
+  }
+  const btnSale = document.querySelector('.sale-input') as HTMLInputElement;
+  btnSale.checked = filter.onlySale;
 }
