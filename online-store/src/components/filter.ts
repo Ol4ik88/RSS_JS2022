@@ -3,6 +3,7 @@ import { IProduct, valueBrand, valueCategory, valueAge} from '../type/type';
 import { car } from './Car';
 import { filter } from './storage';
 import * as noUiSlider from 'nouislider';
+import { resrtSortFilter } from './sorting';
 
 export const addCardClickHandler = () => {
   let listing = document.querySelector('.listing');
@@ -108,12 +109,15 @@ export const addSaleClickHandler = () => {
 
 export const addResetSettingClickHandler = () => {
   let resetSettings = document.querySelector('.reset-settings') as HTMLSelectElement;
+  let inputSearch = document.querySelector('.search') as HTMLInputElement;
   resetSettings.addEventListener('click', ()=>{
     localStorage.clear();
   });
   resetSettings.addEventListener('click', clearFilters);
   resetSettings.addEventListener('click', () => {
     car.clearCar();
+    inputSearch.value = "";
+    resrtSortFilter();
   });
 }
 

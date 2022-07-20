@@ -42,3 +42,8 @@ export const addSortClickHandler = () => {
   select.addEventListener('change', function(){
     cards.sortingCard(this.value)});
 }
+
+export const resrtSortFilter = () => {
+  const select = (document.querySelector('.sort') as HTMLSelectElement).getElementsByTagName('option');
+  select[0].selected = true;
+}
