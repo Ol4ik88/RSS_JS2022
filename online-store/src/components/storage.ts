@@ -3,9 +3,6 @@ import { car } from "./Car";
 
 export let filter: IFilter ;
 
-export function removeStorage(name:string) {
-  localStorage.removeItem(name);
-}
 export function setLocalStorage(){
   let select = document.querySelector('.sort') as HTMLSelectElement; 
   let inputSearch = document.querySelector('.search') as HTMLInputElement;
