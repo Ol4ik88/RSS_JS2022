@@ -29,7 +29,15 @@ export function sortByValue(val:string, data:IProduct[]): IProduct[] {
   return result;
 }
 
-export const addSortClickHandler = ()=>{
+export const initSortFilter = (val:string) => {
+  const select = (document.querySelector('.sort') as HTMLSelectElement).getElementsByTagName('option');
+  for (let i = 0; i < select.length; i++) {
+    if (select[i].value === val) select[i].selected = true;
+  }
+  cards.sortingCard(val);
+}
+
+export const addSortClickHandler = () => {
   let select = document.querySelector('.sort') as HTMLSelectElement;
   select.addEventListener('change', function(){
     cards.sortingCard(this.value)});
