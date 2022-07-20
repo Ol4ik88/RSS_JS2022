@@ -2,12 +2,12 @@ import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import { cards } from '..';
 import { car } from './Car';
-import { filter } from './filter';
+import { filter } from './storage';
 
 enum nameRange { price=1, amount };
 
 function rangeInit (rangeItem:string, elemMin:string,
-      elemMax:string, min:number, max:number, name:string) {
+      elemMax:string, min:number, max:number, name:string, start:number, end:number) {
         const range = document.getElementById(rangeItem) as noUiSlider.target; 
         const inputMin = document.getElementById(elemMin) as HTMLInputElement ;
         const inputMax = document.getElementById(elemMax) as HTMLInputElement; 
@@ -19,8 +19,8 @@ function rangeInit (rangeItem:string, elemMin:string,
             start: [min, max],
             connect: true,
             range: { 
-              'min': min,
-              'max': max
+              'min': start,
+              'max': end
             },
             tooltips: true,
             step: 1, 
@@ -48,29 +48,7 @@ function rangeInit (rangeItem:string, elemMin:string,
 
 export const initSliders = () => {
   rangeInit('range-price', 'min-price', 'max-price', 
-  5, 50, nameRange[1]);
+  filter.minPrice, filter.maxPrice, nameRange[1], 5, 50);
   rangeInit('range-amount', 'min-amount', 'max-amount',
-    1,20, nameRange[2]);
+    filter.minAmount,filter.maxAmount, nameRange[2], 1, 20);
 } 
-
-
-export const addClickFilterReset=() => {
-  let resetFilters = document.querySelector('.reset-filters') as HTMLSelectElement;
-  resetFilters.addEventListener('click', function(){
-    const rangeAmount = document.getElementById('range-amount') as noUiSlider.target;
-    const rangePrice = document.getElementById('range-price') as noUiSlider.target;
-    rangeAmount.noUiSlider?.reset();
-    rangePrice.noUiSlider?.reset();
-    filter.brand.clear();
-    filter.category.clear();
-    filter.age.clear();
-    filter.onlySale = false;
-    cards.filterProducts(cards.catalog, car.productOfCar);
-    const btn = document.querySelectorAll('ul.list button');
-    btn.forEach(e => {
-      e?.classList.remove('active');
-    })
-    const btnSale = document.querySelector('.sale-input') as HTMLInputElement;
-    btnSale.checked = false;
-  });
-}
