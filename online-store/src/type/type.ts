@@ -26,23 +26,25 @@ export interface IFilter {
   brand: Set<string>,
   category: Set<string>,
   age: Set<string>,
-  onlySale: boolean
+  onlySale: boolean,
+  sort:string,
+  inputSearch:string
 }
 
-export const valueBrand = {
-  'button_aurora': 'Aurora', 
-  'button_funcy': 'Funcy', 
-  'button_kids': 'Kids', 
-  'button_cubika': 'Cubika',
+export const valueBrand:Record<string,string> = {
+  "button_aurora": "Aurora", 
+  "button_funcy": "Funcy", 
+  "button_kids": "Kids", 
+  "button_cubika": "Cubika",
 }
 
-export const valueCategory = {
-  'button_stuffed': 'Stuffed Animals', 
-  'button_wooden': 'Wooden Toys', 
-  'button_educational': 'Education Toys', 
+export const valueCategory:Record<string,string> = {
+  "button_stuffed": "Stuffed Animals", 
+  "button_wooden": "Wooden Toys", 
+  "button_educational": "Education Toys", 
 }
 
-export const valueAge = {
-  'button_small': '0+', 
-  'button_large': '3+', 
+export const valueAge:Record<string,string> = {
+  "button_small": "0+", 
+  "button_large": "3+", 
 }
