@@ -3,7 +3,7 @@ import {Modal} from '../components/Modal';
 
 export const car: ICar = {
   
-  productOfCar:new Set<string>(),
+  productOfCar: new Set<string>(),
   
   add(idProduct:string){
     let cardClick=document.querySelector(`div[data-id="${idProduct}"]`);

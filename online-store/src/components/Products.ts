@@ -2,8 +2,9 @@ import dataJSON from './data.json';
 import Card from './Card';
 import { IProduct } from '../type/type';
 import { sortByValue } from './sorting';
-import { filter } from './filter';
+import { filter} from './storage';
 import { car } from './Car';
+
 
 export class Products {
   catalog: IProduct[];
