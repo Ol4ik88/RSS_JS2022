@@ -9,7 +9,7 @@ import { filter, getLocalStorage, setLocalStorage } from './components/storage';
 window.addEventListener('load', getLocalStorage);
 export const cards = new Products();
 
-window.onload=function(){
+window.onload = function () {
   slider.initSliders();
   sort.initSortFilter(filter.sort);
   car.renderCar();
@@ -24,13 +24,6 @@ window.onload=function(){
   filters.addSaleClickHandler();
   filters.addClickFilterReset();
   filters.addResetSettingClickHandler();
-}
+};
 
 window.addEventListener('beforeunload', setLocalStorage);
-
-
-
-
-
-
-
