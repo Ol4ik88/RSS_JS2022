@@ -2,7 +2,6 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const miniCss = require('mini-css-extract-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
@@ -17,10 +16,6 @@ const baseConfig = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(?:ico|jpg|png|svg|jpeg|gif)$/,
-        type: 'asset/resourse',
-      },
-      {
         test: /\.(s*)css$/,
         use: [miniCss.loader, 'css-loader', 'sass-loader'],
       },
@@ -32,7 +27,6 @@ const baseConfig = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, './dist'),
-    assetModuleFilename: 'assets/[name][ext]',
   },
   experiments: {
     topLevelAwait: true,
@@ -45,14 +39,6 @@ const baseConfig = {
     new CleanWebpackPlugin(),
     new EslingPlugin({ extensions: 'ts' }),
     new miniCss({ filename: 'style.css' }),
-    /* new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
-        },
-      ],
-    }), */
   ],
 };
 
