@@ -21,14 +21,17 @@ body {
 .table {
   margin-bottom: 100px;
   text-align: center;
+  & td,
+  & th {
+      font-size: 20px;
+      padding: 8px;
+    }
+  
+  & th {
+      background: $bg-color-green;
+    }
 }
-.table td, .table th {
-  font-size: 20px;
-  padding: 8px;
-}
-.table th {
-  background: $bg-color-green;
-}
+
 .button-sort {
   cursor: pointer;
   user-select: none;
@@ -74,28 +77,29 @@ body {
       color: red;
     }
 }
-
+.launch-pad {
+  display: flex;
+  align-items: center;
+}
 .control-panel {
   padding: 10px 20px;
+  display: flex;
+  gap: 20px;
 }
 .car {
   padding: 30px 0 0;
+  position: relative;
 }
 .road {
   display: flex;
   margin-bottom: 20px;
   border-bottom: 4px solid $font-color;
-  justify-content: space-between;
-  align-items: baseline;
 }
-.launch-pad {
-  display: flex;
-}
+
 .flag {
   padding: 30px 0 0;
-  font-size: 80px;
-  margin-top: -80px;
-  transform: skewX(10deg) translateY(30px) translateX(-180px);
+  font-size: 70px;
+    transform: translateX(-180px);
 }
 .button {
   font-size: 14px;
@@ -166,7 +170,10 @@ body {
   font-weight: 700;
   color: $font-color-br;
 }
-
+.distance-car{
+  width: 100%;
+}
 .pagination {
   margin-bottom: 50px;
 }
+
