@@ -14,7 +14,7 @@ import { updatePagination } from './controllerPage';
 import { renderGarage } from './pageView';
 import { store } from './store';
 import { ICar, IStartDriving, OperationStart, OperationStop } from './type';
-import { animation, generateRandomCars, getDistance, race } from './utils';
+import { animation, generateRandomCars, getDistance } from './utils';
 
 let selectedCar: ICar | null = null;
 const MAX_COUNT_CARS = 7;
@@ -24,6 +24,13 @@ export const updateStateGarage = async () => {
   store.cars = items;
   store.carsCount = count;
   updatePagination(store.carsPage, +store.carsCount, MAX_COUNT_CARS);
+};
+
+const determineWinner = (cars: IStartDriving[]) => {
+  const carsToFinish = cars.filter(({ success }) => success === true);
+  const carWinner = carsToFinish.reduce((min, curr) => (min.time < curr.time ? min : curr));
+  const winner = store.cars.find(({ id }) => id === carWinner.id) as ICar;
+  return { ...winner, time: +(carWinner.time / 1000).toFixed(2) };
 };
 
 const startDriving = async (id: number): Promise<IStartDriving> => {
@@ -41,6 +48,7 @@ const startDriving = async (id: number): Promise<IStartDriving> => {
   const car = document.querySelector(`#car-${id}`) as HTMLElement;
   const flag = document.querySelector(`#flag-${id}`) as HTMLElement;
   const htmlDist = Math.floor(getDistance(car, flag)) + 100;
+
   store.animation[id] = animation(car, htmlDist, time);
   const { success } = await drive(id);
   if (!success) window.cancelAnimationFrame(store.animation[id].idAnim);
@@ -104,11 +112,12 @@ const addListenerRaceControl = () => {
     }
     if (element.classList.contains('race-button')) {
       (element as HTMLButtonElement).disabled = true;
-      const winner = await race(startDriving);
-      await saveWinner(winner);
+      const promises = await Promise.all(store.cars.map(async ({ id }) => await startDriving(id)));
+      const winner = determineWinner(promises);
       const message = document.querySelector('#message') as HTMLElement;
       message.innerHTML = `${winner.name} won, ${winner.time}s`;
       message.classList.toggle('visible', true);
+      await saveWinner(winner);
       (document.querySelector('#reset') as HTMLButtonElement).disabled = false;
     }
     if (element.classList.contains('reset-button')) {
