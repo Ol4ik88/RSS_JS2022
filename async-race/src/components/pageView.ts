@@ -21,17 +21,35 @@ const carImage = (color: string) => `
     c1.841,0,7.037,0,7.037,0V34.191z M38.168,34.191v-9.994c0,0,7.141,0,8.974,0c1.854,0,5.893,8.461,7.032,10.625L38.168,34.191z"/>
 </g>`;
 
-const renderCar = ({
+const renderRoad = ({
   id,
-  name,
   color,
   isEngineStarted = false,
 }: {
   id: number;
-  name: string;
   color: string;
   isEngineStarted?: boolean;
 }) => `
+  <div class="launch-pad">
+      <div class="control-panel">
+        <button class="start-button" id="start-car-${id}" ${isEngineStarted ? 'disabled' : ''}>
+          Start
+        </button>
+        <button class="stop-button" id="stop-car-${id}" ${isEngineStarted ? '' : 'disabled'}>
+          Stop
+        </button>
+      </div>
+    </div>
+    <div class="distance-car">
+      <div class="car" id="car-${id}">
+        ${carImage(color)}
+      </div>
+    </div>
+    <div class="flag" id="flag-${id}">
+      &#127937
+    </div>
+`;
+const renderCar = ({ id, name, color }: { id: number; name: string; color: string }) => `
   <div class="general-buttons">
     <button class="button select-button" id="select-car-${id}">
       Select
@@ -42,22 +60,7 @@ const renderCar = ({
     <span class="car-name">${name}</span>
   </div>
   <div class="road">
-    <div class="launch-pad">
-      <div class="control-panel">
-      <button class="start-button" id="start-car-${id}" ${isEngineStarted ? 'disabled' : ''}>
-        Start
-      </button>
-      <button class="stop-button" id="stop-car-${id}" ${isEngineStarted ? '' : 'disabled'}>
-        Stop
-      </button>
-      </div>
-      <div class="car" id="car-${id}">
-        ${carImage(color)}
-      </div>
-    </div>
-    <div class="flag" id="flag-${id}">
-      &#127937
-    </div>
+    ${renderRoad({ id, color })}
   </div>
 `;
 
@@ -137,6 +140,7 @@ const renderRaceControls = () => `
 `;
 const renderGarageView = () => `
   <div id="garage-view">
+    <p class="message" id="message"></p>
     <div class="forms">
       ${renderFormsMenu()}
     </div>
@@ -145,7 +149,6 @@ const renderGarageView = () => `
     </div>
     <div id="garage">
       ${renderGarage()}
-      <p class="message" id="message"></p>
     </div>
   </div>
 `;
