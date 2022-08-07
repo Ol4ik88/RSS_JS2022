@@ -1,6 +1,3 @@
-import { store } from './store';
-import { ICar, IStartDriving, IWinner, OperationStart } from './type';
-
 function getPositionAtCenter(el: HTMLElement) {
   const { top, left, width, height } = el.getBoundingClientRect();
   return {
@@ -30,29 +27,6 @@ export function animation(car: HTMLElement, distance: number, timeOfAnimation: n
   state.idAnim = window.requestAnimationFrame(step);
   return state;
 }
-
-export const raceAll = async (promises: Promise<IStartDriving>[], ids: number[]): Promise<IWinner> => {
-  const { success, id, time } = await Promise.race(promises);
-  if (!success) {
-    const failedCar = ids.findIndex((i) => i === id);
-    const restPromises = [
-      ...promises.slice(0, failedCar),
-      promises.slice(failedCar + 1, promises.length),
-    ] as Promise<IStartDriving>[];
-    const restIds = [...ids.slice(0, failedCar), ...ids.slice(failedCar + 1, ids.length)];
-    return raceAll(restPromises, restIds);
-  }
-  return { ...(store.cars.find((car) => car.id === id) as ICar), time: +(time / 1000).toFixed(2) };
-};
-
-export const race = async (action: OperationStart) => {
-  const promises = store.cars.map(({ id }) => action(id));
-  const winner = await raceAll(
-    promises,
-    store.cars.map((car) => car.id)
-  );
-  return winner;
-};
 
 const models = [
   'Durango',
