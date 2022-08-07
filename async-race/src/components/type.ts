@@ -15,6 +15,13 @@ export interface ISortWins {
   time: number;
 }
 
+export interface IWinner {
+  name: string;
+  color: string;
+  id: number;
+  time: number;
+}
+
 export interface IWinners {
   car: ICar;
   id: number;
@@ -22,9 +29,15 @@ export interface IWinners {
   time: number;
 }
 
-export interface IWinner {
-  name: string;
-  color: string;
+export type OperationStart = (id: number) => Promise<IStartDriving>;
+export type OperationStop = (id: number) => Promise<void>;
+
+export interface IDrive {
+  success: boolean;
+}
+
+export interface IStartDriving {
+  success: boolean;
   id: number;
   time: number;
 }
@@ -44,20 +57,7 @@ enum OrderValue {
   '',
 }
 
-export interface IDrive {
-  success: boolean;
-}
-
-export interface IStartDriving {
-  success: boolean;
-  id: number;
-  time: number;
-}
-
 export type OrderValueStrings = keyof typeof OrderValue;
-
-export type OperationStart = (id: number) => Promise<IStartDriving>;
-export type OperationStop = (id: number) => Promise<void>;
 
 export interface IStore {
   carsPage: number;
