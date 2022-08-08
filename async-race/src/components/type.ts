@@ -9,7 +9,12 @@ export interface ICar {
   id: number;
 }
 
-export interface ISortWins {
+export interface IStartEngine {
+  velocity: number;
+  distance: number;
+}
+
+export interface IGetWins {
   id: number;
   wins: number;
   time: number;
