@@ -14,7 +14,7 @@ import { updatePagination } from './controllerPage';
 import { renderGarage } from './pageView';
 import { store } from './store';
 import { ICar, IStartDriving, OperationStart, OperationStop } from './type';
-import { animation, generateRandomCars, getDistance } from './utils';
+import { animation, generateRandomCars, getDistance, setDisabledEl } from './utils';
 
 let selectedCar: ICar | null = null;
 const MAX_COUNT_CARS = 7;
@@ -91,9 +91,7 @@ const addListenerUpdateButton = () => {
     await updateStateGarage();
     (document.querySelector('#garage') as HTMLElement).innerHTML = renderGarage();
     (document.querySelector('#update-name') as HTMLInputElement).value = '';
-    (document.querySelector('#update-name') as HTMLInputElement).disabled = true;
-    (document.querySelector('#update-color') as HTMLInputElement).disabled = true;
-    (document.querySelector('.update-submit') as HTMLInputElement).disabled = true;
+    setDisabledEl(['#update-name', '#update-color', '.update-submit'], true);
     selectedCar = null;
   });
 };
@@ -112,7 +110,9 @@ const addListenerRaceControl = () => {
     }
     if (element.classList.contains('race-button')) {
       (element as HTMLButtonElement).disabled = true;
+      setDisabledEl(['#next', '#prev'], true);
       const promises = await Promise.all(store.cars.map(async ({ id }) => await startDriving(id)));
+      updatePagination(store.carsPage, +store.carsCount, MAX_COUNT_CARS);
       const winner = determineWinner(promises);
       const message = document.querySelector('#message') as HTMLElement;
       message.innerHTML = `${winner.name} won, ${winner.time}s`;
@@ -145,9 +145,7 @@ const addListenerGarage = () => {
       selectedCar = (await getCar(+element.id.split('select-car-')[1])) as ICar;
       (document.querySelector('#update-name') as HTMLInputElement).value = selectedCar.name;
       (document.querySelector('#update-color') as HTMLInputElement).value = selectedCar.color;
-      (document.querySelector('#update-name') as HTMLInputElement).disabled = false;
-      (document.querySelector('#update-color') as HTMLInputElement).disabled = false;
-      (document.querySelector('.update-submit') as HTMLButtonElement).disabled = false;
+      setDisabledEl(['#update-name', '#update-color', '.update-submit'], false);
     }
     if (element.classList.contains('remove-button')) {
       const id = +element.id.split('remove-car-')[1];

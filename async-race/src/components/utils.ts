@@ -83,3 +83,11 @@ export const generateRandomCars = (count = 100) =>
     name: getRandomName(),
     color: getRandomColor(),
   }));
+
+export const setDisabledEl = (arr: string[], val: boolean) => {
+  arr.forEach((el) => ((document.querySelector(el) as HTMLInputElement).disabled = val));
+};
+
+export const setDisplayEl = (arr: string[], val: string[]) => {
+  arr.forEach((el, i) => ((document.querySelector(el) as HTMLElement).style.display = val[i]));
+};

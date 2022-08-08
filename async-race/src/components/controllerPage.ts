@@ -2,6 +2,7 @@ import { addlistenerGarage, updateStateGarage } from './controllerGarage';
 import { renderGarage, renderWinners } from './pageView';
 import { store } from './store';
 import { addListenerTableWinners, updateStateWinners } from './controllerWinners';
+import { setDisplayEl } from './utils';
 
 const MAX_COUNT_CARS = 7;
 const MAX_COUNT_WINNERS = 10;
@@ -25,12 +26,10 @@ const addListenerMenu = () => {
     const element = event.target as HTMLElement;
     if (element.classList.contains('button-view-garage')) {
       updatePagination(store.carsPage, +store.carsCount, MAX_COUNT_CARS);
-      (document.querySelector('#garage-view') as HTMLElement).style.display = 'block';
-      (document.querySelector('#winners-view') as HTMLElement).style.display = 'none';
+      setDisplayEl(['#garage-view', '#winners-view'], ['block', 'none']);
     }
     if (element.classList.contains('button-view-winners')) {
-      (document.querySelector('#garage-view') as HTMLElement).style.display = 'none';
-      (document.querySelector('#winners-view') as HTMLElement).style.display = 'block';
+      setDisplayEl(['#garage-view', '#winners-view'], ['none', 'block']);
       await updateStateWinners();
       (document.querySelector('#winners-view') as HTMLElement).innerHTML = renderWinners();
       updatePagination(store.winnersPage, +store.winnersCount, MAX_COUNT_WINNERS);
@@ -38,7 +37,7 @@ const addListenerMenu = () => {
   });
 };
 
-const addClickPaginationHandler = async (element: HTMLElement, classBtn: string) => {
+const addClickPaginationHandler = async (element: HTMLElement, classBtn: 'prev' | 'next') => {
   if (element.classList.contains(`button-${classBtn}`)) {
     switch (store.view) {
       case 'garage': {
