@@ -5,6 +5,7 @@ import { store } from './store';
 import { SortValueStrings } from './type';
 
 const MAX_COUNT_WINNERS = 10;
+
 export const updateStateWinners = async () => {
   const { items, count } = await getWinners({
     page: store.winnersPage,

@@ -135,7 +135,7 @@ const renderFormsMenu = () => `
 `;
 const renderRaceControls = () => `
   <button class="button race-button" id="race">Race</button>
-  <button class="button reset-button" id="reset">Reset</button>
+  <button class="button reset-button" id="reset" disabled>Reset</button>
   <button class="button generator-button" id="generator">Generator cars</button>
 `;
 const renderGarageView = () => `
