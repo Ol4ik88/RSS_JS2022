@@ -32,7 +32,6 @@ const addListenerMenu = () => {
       setDisplayEl(['#garage-view', '#winners-view'], ['none', 'block']);
       await updateStateWinners();
       (document.querySelector('#winners-view') as HTMLElement).innerHTML = renderWinners();
-      updatePagination(store.winnersPage, +store.winnersCount, MAX_COUNT_WINNERS);
     }
   });
 };
